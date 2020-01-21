@@ -22,6 +22,15 @@ class Timer extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+  componentDidUpdate () {
+
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+  if (this.state.time === nextState.time) {
+    return false
+  }
+  return true
+}
 
   render() {
     const { time, color, logText } = this.state;
